@@ -1,0 +1,200 @@
+% Copyright 2004 by Till Tantau <tantau@users.sourceforge.net>.
+%
+% In principle, this file can be redistributed and/or modified under
+% the terms of the GNU Public License, version 2.
+%
+% However, this file is supposed to be a template to be modified
+% for your own needs. For this reason, if you use this file as a
+% template and not specifically distribute it as part of a another
+% package/program, I grant the extra permission to freely copy and
+% modify this file as you see fit and even to delete this copyright
+% notice. 
+
+\documentclass{beamer}
+\usepackage[normalem]{ulem}
+%\usepackage{algorithmicx}
+\usepackage[utf8]{inputenc} % Swedish symbols
+%\usepackage{algpseudocode}
+% There are many different themes available for Beamer. A comprehensive
+% list with examples is given here:
+% http://deic.uab.es/~iblanes/beamer_gallery/index_by_theme.html
+% You can uncomment the themes below if you would like to use a different
+% one:
+\usepackage{verbatim}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{qtree}
+\usepackage{caption}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=TeX,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\footnotesize\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
+\definecolor{datagulTOP}{RGB}{251,203,19}
+\definecolor{datagulSIDE}{RGB}{175,141,13}
+
+
+%\usetheme{AnnArbor}
+%\usetheme{Antibes}
+%\usetheme{Bergen}
+\usetheme{Berkeley}
+%\usetheme{Berlin}
+%\usetheme{Boadilla}
+%\usetheme{boxes}
+%\usetheme{CambridgeUS}
+%\usetheme{Copenhagen}
+%\usetheme{Darmstadt}
+%\usetheme{default}
+%\usetheme{Frankfurt}
+%\usetheme{Goettingen}
+%\usetheme{Hannover}
+%\usetheme{Ilmenau}
+%\usetheme{JuanLesPins}
+%\usetheme{Luebeck}
+%\usetheme{Madrid}
+%\usetheme{Malmoe}
+%\usetheme{Marburg}
+%\usetheme{Montpellier}
+%\usetheme{PaloAlto}
+%\usetheme{Pittsburgh}
+%\usetheme{Rochester}
+%\usetheme{Singapore}
+%\usetheme{Szeged}
+%\usetheme{Warsaw}
+
+%%%%%%%%
+
+
+% Gives the layout colors..
+\usecolortheme{wolverine}
+\setbeamercolor{structure}{fg=black}
+\setbeamercolor{frametitle}{bg=datagulTOP}
+\setbeamercolor{sidebar}{bg=datagulSIDE}
+\setbeamercolor{normal text}{bg=white, fg=black}
+%\setbeamercolor{thesection}{fg=red}
+%\setbeamercolor{example text}{fg=brown}
+
+\lstset{escapeinside={<@}{@>}}
+\title{\LaTeX \hspace{1 mm} Tutorial}
+\subtitle{gotta TeX good.}
+\author{Johan Burström}
+\date{\today}
+% - Either use conference name or its abbreviation.
+% - Not really informative to the audience, more for people (including
+%   yourself) who are reading the slides online
+
+\newcommand{\hejsan}{something cool}
+
+\newcommand{\fstcmd}[1][]{cmd1 #1 \sndcmd[#1]}
+\newcommand{\sndcmd}[1][]{cmd2 #1}
+
+\subject{\LaTeX}
+% This is only inserted into the PDF information catalog. Can be left
+% out. 
+
+% If you have a file called "university-logo-filename.xxx", where xxx
+% is a graphic format that can be processed by latex or pdflatex,
+% resp., then you can add a logo as follows:
+
+ \pgfdeclareimage[height=1.5cm]{university-logo}{ddos2.jpg}
+ \logo{\pgfuseimage{university-logo}}
+
+% Delete this, if you do not want the table of contents to pop up at
+% the beginning of each subsection:
+\AtBeginSection[]
+{
+ 
+  \begin{frame}<beamer>{Outline}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+
+\AtBeginSubsection[]
+{
+  \begin{frame}<beamer>{Outline}
+    \tableofcontents[currentsection,currentsubsection]
+  \end{frame}
+}
+
+% Let's get started
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+
+\begin{frame}{Outline}
+  \tableofcontents
+  % You might wish to add the option [pausesections]
+\end{frame}
+
+% Section and subsections will appear in the presentation overview
+% and table of contents.
+
+\input{intro.tex}
+\input{cv-template.tex}
+\input{protocol-template}
+\input{more-advanced.tex}
+\input{playaround.tex}
+%\input{other-guides.tex}
+
+
+
+
+% All of the following is optional and typically not needed. 
+\appendix
+\section<presentation>*{\appendixname}
+\subsection<presentation>*{Sources}
+
+\begin{frame}[allowframebreaks]
+  \frametitle<presentation>{Sources}
+  \small
+  \begin{thebibliography}{10}
+    
+  \beamertemplatearticlebibitems
+  \bibitem{sharelatex}
+    sharelatex.com
+    \newblock Online \LaTeX editor.
+    \newblock \texttt{https://www.sharelatex.com} -- 2015.
+ 
+ \beamertemplatearticlebibitems
+  \bibitem{beamer}
+    Beamer package
+    \newblock the theme used is called "Berkeley" and with colortheme "wolverine"
+    \newblock \texttt{http://deic.uab.es/$\sim$iblanes/beamer\_gallery/index\_by\_theme.html} 
+    -- 2015.
+   
+  \beamertemplatearticlebibitems
+  \bibitem{ltutemplate}
+    Johan Carlsons LTU template.
+    \newblock http://staff.www.ltu.se/$\sim$johanc/teaching.htm
+    \newblock \texttt{http://staff.www.ltu.se/$\sim$johanc/LTU\_Beamer\_2012-06-20.zip} 
+    -- 2015.
+     
+    
+  \end{thebibliography}
+\end{frame}
+
+\end{document}
+
+

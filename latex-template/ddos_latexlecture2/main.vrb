@@ -1,0 +1,14 @@
+\frametitle{Image placement - Place images anywhere?}\framesubtitle {http://staff.www.ltu.se/~johanc/teaching.htm}
+	\begin{minipage}[b]{0.4\textwidth}
+	\includegraphics[width=\textwidth]{img/4-imagefloat.png}
+	\end{minipage}
+	\begin{minipage}[c]{\textwidth}
+	    \begin{block}{}
+	    	\begin{lstlisting}
+				\putimageblock{.55}{.95}{.25}{peaks.pdf}
+				\putimageblock{.35}{.80}{.25}{peaks.pdf}
+				\putimageblock{.15}{.65}{.25}{peaks.pdf}
+			\end{lstlisting}
+		\end{block}
+	\end{minipage}
+
